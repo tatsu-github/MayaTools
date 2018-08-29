@@ -78,6 +78,10 @@ def createAbsoluteOverride():
     layer_name = 'charaA'  # any layer name
     collection_name = 'visibilityOff'  # any collection name
     target_collection = renderSetup.instance().getRenderLayer(layer_name).getCollectionByName(collection_name)
-    
+    cmds.polyCube(n='dummyObj')
+    abs_override = target_collection.createAbsoluteOverride('dummyObjShape', 'primaryVisibility')
+    abs_override.setName(layer_name + '_visibleOff')
+    abs_override.setAttrValue(0)
+    cmds.delete('dummyObj')
     
     
