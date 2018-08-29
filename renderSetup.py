@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 
-scripts for Maya render setup utility
+some scripts for Maya render setup utility
 
 '''
 from maya import cmds, mel
@@ -21,5 +21,5 @@ def getRenderLayerNameList:
 
     # other way, to get renderSetupLayer node list with maya.cmds
     # It returns the same result as the above function
-    layer_list = maya.cmds.ls(type='renderSetupLayer')
+    layer_list = cmds.ls(type='renderSetupLayer')
     
