@@ -50,7 +50,7 @@ def getCollectionObjectsFromLayerObject():
     collections = render_layer.getCollections()
     return collections
 
-def getCollectionsNameFromLayerNames():
+def getCollectionsNameFromLayerName():
     layer_name = 'charaA'  # any name
     render_layer = renderSetup.instance().getRenderLayer(layer_name)
     collection_objects = render_layer.getCollections()
