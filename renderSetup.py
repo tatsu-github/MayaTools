@@ -39,8 +39,10 @@ def getRenderLayerObjectFromName():
     layer_name = 'charaA'  # any layer name you want
     try:
         render_layer = renderSetup.instance().getRenderLayer(layer_name)
+        return render_layer
     except:
-        print 'not exists'    
+        print 'not exists'
+        return False
 
 def getCollectionObjectsFromLayerObject():
     layer_name = 'charaA' # any name
@@ -84,6 +86,10 @@ def createAbsoluteOverride():
     abs_override.setName(layer_name + '_visibleOff')
     abs_override.setAttrValue(0)
     cmds.delete('dummyObj')
+    # additional notes："createAbsoluteOverride" method
+    # it needs two arg, one is a node name(which has a attribute to override) and the other is attr name.
+    # and node name must actually exist in the scene
+    # for this reason it needs dummy object
     
 def createShaderOverride():
     layer = renderSetup.instance().createRenderLayer('mask')  # create layer
