@@ -23,3 +23,19 @@ def getRenderLayerNameList:
     # It returns the same result as the above function
     layer_list = cmds.ls(type='renderSetupLayer')
     
+def deleteAllRenderSetup:
+    render_setup = renderSetup.instance()
+    render_layers = render_setup.getRenderLayers()
+    for i in render_layers:
+        renderLayer.delete(i)
+
+def getRenderLayerObjectFromName:
+    # if not exists layer name object, then renderSetup command return error
+    # so using try statement
+    layer_name = 'charaA'  # any layer name you want
+    try:
+        render_layer = renderSetup.instance().getRenderLayer(layer_name)
+    except:
+        print 'not exists'    
+
+        
