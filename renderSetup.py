@@ -3,7 +3,7 @@
 '''
 
 some scripts for Maya render setup utility
-operation confirmed in maya 2018 Update3
+operation confirmed in maya 2018 Update3 and MtoA 3.1.0
 
 '''
 
@@ -103,6 +103,20 @@ def createShaderOverride():
     red_override.setName('override_mask_red')
     mat_name = 'mask_red'  # any material you want to use override
     cmds.connectAttr(mat_name + '.outColor', 'override_mask_red.attrValue', f=True)  # connect attr material to shader override
+    
+def aovOverride():
+    layer_name = 'charaA'  # any layer
+    layer = renderSetup.instance().getRenderLayer(layer_name)  # any layer
+    aov_collection = layer.aovCollectionInstance()
+    aov_name = 'diffuse_albedo'  # any AOV
+    sub_colle = collection.create(layer_name+'_'+aov_name, collection.AOVChildCollection.kTypeId, aovName=aov_name)
+    aov_collection.appendChild(sub_colle)
+    override = sub_colle.createAbsoluteOverride('aiAOV_'+aov_name, 'enabled')  #(aov name, attr name)
+    override.setAttrValue(0)  # override value
+    override.setName(layer_name+'_'+aov_name)
+    
+    
+    
     
     
     
