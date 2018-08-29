@@ -3,6 +3,7 @@
 '''
 
 some scripts for Maya render setup utility
+operation confirmed in maya 2018 Update3
 
 '''
 
