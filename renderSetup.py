@@ -54,5 +54,14 @@ def getCollectionsNameFromLayerNames:
         collection_names.append(i.name())
     return collection_names
 
-def setMayaOb
+def setMayaObjectToCollection():
+    sel = cmds.ls(sl=True)  # it must be list even if it is a single object
+    layer_name = 'charaA'　　# any layer name
+    collection_name = 'visibilityOff'　#　any collection name
+    target_collection = renderSetup.instance().getRenderLayer(layer_name).getCollectionByName(collection_name)
+    target_collection.getSelector().staticSelection.set(sel)  # set maya object to collection
+    # additional notes："staticSelection" method
+    # set：overwrite value regardless of the current
+    # add：add value to current
+    # remove：remove value to current
 
