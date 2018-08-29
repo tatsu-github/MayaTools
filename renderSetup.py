@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+'''
+
+scripts for Maya render setup utility
+
+'''
 from maya import cmds, mel
 import maya.app.renderSetup.model.override as override
 import maya.app.renderSetup.model.selector as selector
