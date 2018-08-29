@@ -84,4 +84,19 @@ def createAbsoluteOverride():
     abs_override.setAttrValue(0)
     cmds.delete('dummyObj')
     
+def createShaderOverride():
+    layer = renderSetup.instance().createRenderLayer('mask')  # create layer
+    mask_collection = layer.createCollection('collection_mask')  # create collection
+    red_collection = mask_collection.createCollection('collection_red')  # create sub collection
+    filterType, customFilter = selector.Filters.getFiltersFor('shadingEngine')  # set sub collection value
+    red_collection.getSelector().setPattern('*')
+    red_collection.getSelector().setFilterType(filterType)
+    red_collection.getSelector().setCustomFilterValue(customFilter)
+    red_override = red_collection.createOverride('aiSurfaceShader', 'shaderOverride')  # create shader override
+    red_override.setName('override_mask_red')
+    mat_name = 'mask_red'  # any material you want to use override
+    cmds.connectAttr(mat_name + '.outColor', 'override_mask_red.attrValue', f=True)  # connect attr material to shader override
+    
+    
+    
     
