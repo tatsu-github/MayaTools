@@ -33,7 +33,7 @@ def deleteAllRenderSetup():
     for i in render_layers:
         renderLayer.delete(i)
 
-def getRenderLayerObjectFromName():
+def getLayerObjectFromLayerName():
     # if not exists layer name object, then renderSetup command return error
     # so using try statement
     layer_name = 'charaA'  # any layer name you want
