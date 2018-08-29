@@ -68,7 +68,7 @@ def setMayaObjectToCollection():
     # additional notes："staticSelection" method
     # set：overwrite value regardless of the current
     # add：add value to current
-    # remove：remove value to current
+    # remove：remove value from current
 
 def getCollectionItems():
     layer_name = 'charaA'  # any layer name
