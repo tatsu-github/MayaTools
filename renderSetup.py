@@ -66,8 +66,8 @@ def setMayaObjectToCollection():
     # remove：remove value to current
 
 def getCollectionItems():
-    layer_name = 'charaA' # any layer name
-    collection_name = 'visibilityOff' #any collection name
+    layer_name = 'charaA'  # any layer name
+    collection_name = 'visibilityOff'  # any collection name
     target_collection = renderSetup.instance().getRenderLayer(layer_name).getCollectionByName(collection_name)
     objects_in_collection = target_collection.getSelector().staticSelection.asList()
     return objects_in_collection
