@@ -12,6 +12,7 @@ import maya.app.renderSetup.model.renderLayer as renderLayer
 import maya.app.renderSetup.model.renderSetup as renderSetup
 import maya.app.renderSetup.model.connectionOverride as connectionOverride
 
+
 def getRenderLayerNameList:
     layer_objects = renderSetup.instance().getRenderLayers()  # get layer object list
     layer_names = []
@@ -38,4 +39,20 @@ def getRenderLayerObjectFromName:
     except:
         print 'not exists'    
 
-        
+def getCollectionObjectsFromLayerObject:
+    layer_name = 'charaA' # any name
+    render_layer = renderSetup.instance().getRenderLayer(layer_name)
+    collections = render_layer.getCollections()
+    return collections
+
+def getCollectionsNameFromLayerNames:
+    layer_name = 'charaA'  # any name
+    render_layer = renderSetup.instance().getRenderLayer(layer_name)
+    collection_objects = render_layer.getCollections()
+    collection_names = []
+    for i in collection_objects:
+        collection_names.append(i.name())
+    return collection_names
+
+def setMayaOb
+
