@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 '''
 
 some scripts for Maya render setup utility
@@ -115,7 +114,14 @@ def aovOverride():
     override.setAttrValue(0)  # override value
     override.setName(layer_name+'_'+aov_name)
     
-    
+def renderSetttingoverride():
+    layer_name = 'charaA'  # any layer
+    render_layer = renderSetup.instance().createRenderLayer(layer_name) 
+    set_colle = render_layer.renderSettingsCollectionInstance()
+    attr_name = 'AASamples'
+    override = set_colle.createAbsoluteOverride('defaultArnoldRenderOptions', attr_name)
+    override.setAttrValue(5)
+    override.setName(layer_name+'_'+attr_name)
     
     
     
