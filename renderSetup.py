@@ -15,6 +15,7 @@ import maya.app.renderSetup.model.renderSetup as renderSetup
 import maya.app.renderSetup.model.connectionOverride as connectionOverride
 
 
+# Get render layer name list
 def getRenderLayerNameList():
     layer_objects = renderSetup.instance().getRenderLayers()  # get layer object list
     layer_list = []
@@ -25,15 +26,16 @@ def getRenderLayerNameList():
     # other way, to get renderSetupLayer node list with maya.cmds
     # it returns the same result as the above function
     # layer_list = cmds.ls(type='renderSetupLayer')
-    
-def deleteAllRenderSetup():
-    render_setup = renderSetup.instance()
-    render_layers = render_setup.getRenderLayers()
+
+# Delete all render layer
+def deleteAllRenderLayer():
+    render_layers = renderSetup.instance().getRenderLayers()
     for i in render_layers:
         renderLayer.delete(i)
 
+# Get render layer object from specific layer name
 def getLayerObjectFromLayerName():
-    # if not exist renderSetup return error
+    # if the specified layer does not exist, renderSetup returns error
     # so using try statement
     layer_name = 'charaA'  # any layer name
     try:
@@ -43,12 +45,14 @@ def getLayerObjectFromLayerName():
         print 'not exists'
         return False
 
+# Get collection objects from specific layer name
 def getCollectionObjectsFromLayerObject():
     layer_name = 'charaA' # any name
     render_layer = renderSetup.instance().getRenderLayer(layer_name)
     collections = render_layer.getCollections()
     return collections
 
+# Get collections name from specific layer name
 def getCollectionsNameFromLayerName():
     layer_name = 'charaA'  # any name
     render_layer = renderSetup.instance().getRenderLayer(layer_name)
@@ -58,6 +62,7 @@ def getCollectionsNameFromLayerName():
         collection_names.append(i.name())
     return collection_names
 
+# Set maya object to collection
 def setMayaObjectToCollection():
     sel = cmds.ls(sl=True)  # it must be list even if it is a single object
     layer_name = 'charaA'  # any layer name
@@ -69,13 +74,15 @@ def setMayaObjectToCollection():
     # add：add value to current
     # remove：remove value from current
 
+# Get objects included in specific collection
 def getCollectionItems():
     layer_name = 'charaA'  # any layer name
     collection_name = 'visibilityOff'  # any collection name
     target_collection = renderSetup.instance().getRenderLayer(layer_name).getCollectionByName(collection_name)
     objects_in_collection = target_collection.getSelector().staticSelection.asList()
     return objects_in_collection
-    
+
+# Create absolute override below specific collection
 def createAbsoluteOverride():
     layer_name = 'charaA'  # any layer name
     collection_name = 'visibilityOff'  # any collection name
@@ -89,6 +96,7 @@ def createAbsoluteOverride():
     # it needs two arg, one is a node name(which has a attribute to override) and the other is attr name.
     # and node name must actually exist in the scene
     # for this reason it needs dummy object
+
     
 def createShaderOverride():
     layer = renderSetup.instance().createRenderLayer('mask')  # create layer
