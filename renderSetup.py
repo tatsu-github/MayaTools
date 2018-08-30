@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 
-some scripts for Maya render setup utility
+scripts for Maya render setup utility
 operation confirmed in maya 2018 Update3 and MtoA 3.1.0
 
 '''
