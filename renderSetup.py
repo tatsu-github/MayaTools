@@ -97,7 +97,7 @@ def createAbsoluteOverride():
     # and node name must actually exist in the scene
     # for this reason it needs dummy object
 
-    
+# Create shader override    
 def createShaderOverride():
     layer = renderSetup.instance().createRenderLayer('mask')  # create layer
     mask_collection = layer.createCollection('collection_mask')  # create collection
@@ -110,8 +110,9 @@ def createShaderOverride():
     red_override.setName('override_mask_red')
     mat_name = 'mask_red'  # any material you want to use override
     cmds.connectAttr(mat_name + '.outColor', 'override_mask_red.attrValue', f=True)  # connect attr material to shader override
-    
-def aovOverride():
+
+# Create AOVs override    
+def createAovOverride():
     layer_name = 'charaA'  # any layer
     layer = renderSetup.instance().getRenderLayer(layer_name)  # any layer
     aov_collection = layer.aovCollectionInstance()
@@ -121,8 +122,9 @@ def aovOverride():
     override = sub_colle.createAbsoluteOverride('aiAOV_'+aov_name, 'enabled')  #(aov name, attr name)
     override.setAttrValue(0)  # override value
     override.setName(layer_name+'_'+aov_name)
-    
-def renderSetttingoverride():
+
+# Create render setting override
+def createRenderSetttingoverride():
     layer_name = 'charaA'  # any layer
     render_layer = renderSetup.instance().createRenderLayer(layer_name) 
     set_colle = render_layer.renderSettingsCollectionInstance()
