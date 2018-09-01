@@ -1,1 +1,2 @@
-# Tools
+# MayaTools
+script for Autodesk Maya
