@@ -16,5 +16,6 @@ print sgs
 mts = cmds.listConnections(sgs, t='aiStandardSurface')
 print mts
 
-
+files = cmds.listConnections(mts, t='file')
+print files
 
