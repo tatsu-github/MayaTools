@@ -16,6 +16,7 @@ print sgs
 mts = cmds.listConnections(sgs, t='aiStandardSurface')
 print mts
 
+# get file node
 files = cmds.listConnections(mts, t='file')
 print files
 
