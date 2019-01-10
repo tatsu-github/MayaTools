@@ -7,9 +7,10 @@ sel = cmds.ls(sl=True, type='transform')
 meshes = cmds.listRelatives(sel[0], ad=True, type='mesh')
 
 # get shading engine
+sgs_tmp = cmds.listConnestions(meshes, t='shadingEngine')
+sgs = list(set(sgs_tmp))
 
-
-# get material
-
+# get spcecific material
+mts = cmds.listConnections(sgs, t='aiStandardSurface')
 
 
