@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+# How to use ?
+# 1. put this py file on your Maya scripts folder(e.g. maya/2018/scripts)
+# 2. import this py module and run this script(e.g. import fileRenamer_en;fileRenamer_en.FileRenamerEn)
+
 from maya import cmds
 from functools import partial
 from collections import OrderedDict
