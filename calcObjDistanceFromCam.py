@@ -1,4 +1,5 @@
-# calculate distance from camera using focal length and horizontal aperture, object height
+# calculate distance from camera 
+using focal length and horizontal aperture, object height
 from maya import cmds
 import math
 
