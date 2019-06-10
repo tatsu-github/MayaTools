@@ -1,7 +1,7 @@
-# calculate distance from camera using focal length and horizontal aperture
-
+# calculate distance from camera using focal length and horizontal aperture, object height
 from maya import cmds
 import math
+
 cam = 'renderCam'
 f_length = cmds.getAttr(cam+'.focalLength')
 h_aperture = cmds.getAttr(cam+'.horizontalFilmAperture')
