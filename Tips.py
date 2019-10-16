@@ -15,3 +15,7 @@ path_list = path.split(':')
 for i in path_list:
     print i
     
+# get module path
+import http://maya.app.renderSetup.model.collection as collection
+print collection.__file__
+
