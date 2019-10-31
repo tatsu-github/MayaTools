@@ -1,5 +1,5 @@
 # print attrs from selected node
-for i in maya.cmds.listAttr(http://maya.cmds.ls(sl=True)[0]):print(i)
+for i in maya.cmds.listAttr(cmds.ls(sl=True)[0]):print(i)
 
 # get file name without extention
 from maya import cmds
