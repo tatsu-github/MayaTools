@@ -19,3 +19,6 @@ for i in path_list:
 import http://maya.app.renderSetup.model.collection as collection
 print collection.__file__
 
+# get textrue path from selected file node
+sel = cmds.ls(sl=True)[0]
+print cmds.getAttr(sel+'.fileTextureName')
