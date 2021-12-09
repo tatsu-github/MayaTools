@@ -16,7 +16,7 @@ for i in path_list:
     print i
     
 # get module path
-import http://maya.app.renderSetup.model.collection as collection
+import maya.app.renderSetup.model.collection as collection
 print collection.__file__
 
 # get textrue path from selected file node
