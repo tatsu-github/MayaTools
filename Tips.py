@@ -32,3 +32,20 @@ for i in cmds.ls(sl=True, type='transform'):
     disc = cmds.rename(disc, 'disc_' + i)
     const = cmds.parentConstraint(i, disc, weight=1)
     cmds.delete(const)
+    
+# add color management file rules
+cmds.colorManagementPrefs(e=True, ocioRulesEnabled=False)
+proj = 'myProject'
+srgb = ['jpg', 'jpeg', 'tif', 'png']
+raw = ['exr']
+for i in srgb + raw:
+    rule_name = proj + '_' + i
+    try:
+        if cmds.colorManagementFileRules(rule_name, query=True, pattern=True):
+            cmds.colorManagementFileRules(remove=rule_name)
+    except RuntimeError:
+        pass
+    if i in srgb:
+        cmds.colorManagementFileRules(add=rule_name, pattern='*', extension=i, colorSpace='Utility - sRGB - Texture')
+    else:
+        cmds.colorManagementFileRules(add=rule_name, pattern='*', extension=i, colorSpace='Utility - Raw')
