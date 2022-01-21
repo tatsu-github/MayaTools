@@ -34,7 +34,7 @@ for i in cmds.ls(sl=True, type='transform'):
     cmds.delete(const)
 
 # Set Default View LUT
-cmds.colorManagementPrefs(e = True,  viewTransformName = "sRGB (ACES)" )
+cmds.colorManagementPrefs(e=True,  viewTransformName="sRGB (ACES)" )
     
 # add color management file rules
 cmds.colorManagementPrefs(e=True, ocioRulesEnabled=False)
