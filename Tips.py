@@ -32,6 +32,9 @@ for i in cmds.ls(sl=True, type='transform'):
     disc = cmds.rename(disc, 'disc_' + i)
     const = cmds.parentConstraint(i, disc, weight=1)
     cmds.delete(const)
+
+# Default View LUT
+cmds.colorManagementPrefs(e = True,  viewTransformName = "sRGB (ACES)" )
     
 # add color management file rules
 cmds.colorManagementPrefs(e=True, ocioRulesEnabled=False)
