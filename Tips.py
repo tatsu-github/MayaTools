@@ -33,7 +33,7 @@ for i in cmds.ls(sl=True, type='transform'):
     const = cmds.parentConstraint(i, disc, weight=1)
     cmds.delete(const)
 
-# Default View LUT
+# Set Default View LUT
 cmds.colorManagementPrefs(e = True,  viewTransformName = "sRGB (ACES)" )
     
 # add color management file rules
