@@ -25,3 +25,10 @@ print cmds.getAttr(sel+'.fileTextureName')
 
 # set file node colorspace
 cmds.setAttr(filenode + '.colorSpace', 'sRGB', type='string')
+
+# create disc to selected objects
+for i in cmds.ls(sl=True, type='transform'):
+    disc = cmds.polyDisc(sides=3, subdivisionMode=4, subdivisions=3, radius=1)
+    disc = cmds.rename(disc, 'disc_' + i)
+    const = cmds.parentConstraint(i, disc, weight=1)
+    cmds.delete(const)
