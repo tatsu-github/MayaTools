@@ -52,3 +52,11 @@ for i in srgb + raw:
         cmds.colorManagementFileRules(add=rule_name, pattern='*', extension=i, colorSpace='Utility - sRGB - Texture')
     else:
         cmds.colorManagementFileRules(add=rule_name, pattern='*', extension=i, colorSpace='Utility - Raw')
+
+# Check for duplicate mesh names
+meshes = cmds.listRelatives(cmds.ls(sl=True)[0], ad=True, type='mesh')
+for i in meshes:
+    if i in emp_list:
+        print i
+    else:
+        emp_list.append(i)
