@@ -20,3 +20,5 @@ print mts
 files = cmds.listConnections(mts, t='file')
 print files
 
+# get connection src
+src = cmds.connectionInfo(plug_name, sfd=True)
