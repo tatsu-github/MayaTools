@@ -27,6 +27,11 @@ def getRenderLayerNameList():
     # it returns the same result as the above function
     # layer_list = cmds.ls(type='renderSetupLayer')
 
+# Switch to current layer
+def switchToCurrentLayer():
+    layer_objects = renderSetup.instance().getRenderLayers()
+    renderSetup.instance().switchToLayer(layer_objects[0])
+    
 # Delete all render layer
 def deleteAllRenderLayer():
     render_layers = renderSetup.instance().getRenderLayers()
