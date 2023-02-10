@@ -60,3 +60,13 @@ for i in meshes:
         print i
     else:
         emp_list.append(i)
+
+# get start / end frame
+# animation start
+cmds.playbackOptions(q=True, animationStartTime=True)
+# start frame
+cmds.playbackOptions(q=True, minTime=True)
+# end frame
+cmds.playbackOptions(q=True, maxTime=True)
+# animation end
+cmds.playbackOptions(q=True, animationEndTime=True)
