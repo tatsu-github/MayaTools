@@ -15,6 +15,13 @@ path_list = path.split(':')
 for i in path_list:
     print i
     
+# print Maya module path
+from maya import cmds, mel
+path = mel.eval('getenv "MAYA_MODULE_PATH"')
+path_list = path.split(':')
+for i in path_list:
+    print i
+    
 # get module path
 import maya.app.renderSetup.model.collection as collection
 print collection.__file__
