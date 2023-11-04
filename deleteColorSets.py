@@ -1,3 +1,4 @@
+from maya import cmds
 for i in cmds.ls(sl=True):
     color_sets = cmds.polyColorSet(i, q=True, acs=True)
     if color_sets:
