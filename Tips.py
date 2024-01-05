@@ -42,6 +42,9 @@ for i in cmds.ls(sl=True, type='transform'):
 
 # Set Default View LUT
 cmds.colorManagementPrefs(e=True,  viewTransformName="sRGB (ACES)" )
+
+#Set Rendering space setting
+cmds.colorManagementPrefs(e=True, renderingSpaceName='ACEScg')
     
 # add color management file rules
 cmds.colorManagementPrefs(e=True, ocioRulesEnabled=False)
