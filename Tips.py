@@ -77,3 +77,5 @@ cmds.playbackOptions(q=True, minTime=True)
 cmds.playbackOptions(q=True, maxTime=True)
 # animation end
 cmds.playbackOptions(q=True, animationEndTime=True)
+# get current frame
+cmds.currentTime(q=True)
