@@ -83,6 +83,13 @@ cmds.playbackOptions(q=True, animationEndTime=True)
 # get current frame
 cmds.currentTime(q=True)
 
+# check GUI or CUI
+def check_maya_mode():
+    if cmds.about(batch=True):
+        print("Maya is running in Command Line Interface (CUI) mode.")
+    else:
+        print("Maya is running in Graphical User Interface (GUI) mode.")
+
 '''
 Reference Editing
 '''
