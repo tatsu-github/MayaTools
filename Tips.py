@@ -82,3 +82,15 @@ cmds.playbackOptions(q=True, maxTime=True)
 cmds.playbackOptions(q=True, animationEndTime=True)
 # get current frame
 cmds.currentTime(q=True)
+
+'''
+Reference Editing
+'''
+# Reference alembic file without namespace
+cmds.file(file_path, r=True, type='Alembic', mnc=True, namespace=':')
+
+# Remove reference file
+ref_check = cmds.referenceQuery(object_name, isNodeReferenced=True)
+if ref_check:
+    ref_file = cmds.referenceQuery(object_name, filename=True)
+    cmds.file(ref_file, removeReference=True)
