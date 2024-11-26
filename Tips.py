@@ -13,14 +13,14 @@ from maya import cmds, mel
 path = mel.eval('getenv "MAYA_PLUG_IN_PATH"')
 path_list = path.split(':')
 for i in path_list:
-    print i
+    print(i)
     
 # print Maya module path
 from maya import cmds, mel
 path = mel.eval('getenv "MAYA_MODULE_PATH"')
 path_list = path.split(':')
 for i in path_list:
-    print i
+    print(i)
     
 # get module path
 import maya.app.renderSetup.model.collection as collection
@@ -28,7 +28,7 @@ print collection.__file__
 
 # get textrue path from selected file node
 sel = cmds.ls(sl=True)[0]
-print cmds.getAttr(sel+'.fileTextureName')
+print(cmds.getAttr(sel+'.fileTextureName'))
 
 # set file node colorspace
 cmds.setAttr(filenode + '.colorSpace', 'sRGB', type='string')
@@ -67,7 +67,7 @@ for i in srgb + raw:
 meshes = cmds.listRelatives(cmds.ls(sl=True)[0], ad=True, type='mesh')
 for i in meshes:
     if i in emp_list:
-        print i
+        print(i)
     else:
         emp_list.append(i)
 
