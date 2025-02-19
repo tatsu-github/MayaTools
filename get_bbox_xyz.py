@@ -6,4 +6,5 @@ def get_bbox_xyz():
     width = xmax - xmin
     height = ymax - ymin
     depth = zmax - zmin
+    return width, height, depth
   
