@@ -1,6 +1,6 @@
 import maya.cmds as cmds
 
-def imageplane_to_polyplane():
+def imageplane_to_polygon():
     selected = cmds.ls(sl=True, l=True)
 
     if not selected:
@@ -52,6 +52,6 @@ def imageplane_to_polyplane():
 
 
 def main():
-    imageplane_to_polyplane()
+    imageplane_to_polygon()
 
 main()
