@@ -1,6 +1,6 @@
 import maya.cmds as cmds
 
-def imageplane_to_plane():
+def imageplane_to_polyplane():
     selected = cmds.ls(sl=True, l=True)
 
     if not selected:
@@ -51,6 +51,7 @@ def imageplane_to_plane():
             cmds.sets(plane, edit=True, forceElement=shading_group)
 
 
-
 def main():
-    imageplane_to_plane()
+    imageplane_to_polyplane()
+
+main()
