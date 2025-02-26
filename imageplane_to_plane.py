@@ -47,6 +47,9 @@ def imageplane_to_polygon():
             cmds.connectAttr(f'{file_node}.outColor', f'{shader}.color')
             colorspace = cmds.getAttr(f'{img_plane}.colorSpace')
             cmds.setAttr(f'{file_node}.colorSpace', colorspace, type='string')
+            use_frame_extension = cmds.getAttr(f'{img_plane}.useFrameExtension')
+            if use_frame_extension == True:
+                cmds.setAttr(f'{file_node}.useFrameExtension', use_frame_extension)
 
             cmds.sets(plane, edit=True, forceElement=shading_group)
 
