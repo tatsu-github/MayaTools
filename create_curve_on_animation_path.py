@@ -33,5 +33,5 @@ def create_curve_on_animation_path():
         else:
             cmds.warning('位置データを取得できませんでした。オブジェクトにアニメーションキーがあるか確認してください。')
 # スクリプトを実行
-if __name__ == '__main__':
+if __name__ == '__main__'
     create_curve_on_animation_path()
