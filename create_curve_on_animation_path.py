@@ -11,7 +11,7 @@ def create_curve_on_animation_path():
         cmds.warning('トランスフォームノードを選択してください。')
         return
     # 複数のオブジェクトが選択されている場合は最初のオブジェクトを使用
-    for target_object in selected_objects
+    for target_object in selected_objects:
         # シーンのタイムレンジを取得
         start_time = int(cmds.playbackOptions(query=True, minTime=True))
         end_time = int(cmds.playbackOptions(query=True, maxTime=True))
